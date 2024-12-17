@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://xt4sfnytabju"]
+
+[ext_resource type="Script" path="res://Scripts/skater.gd" id="1_q1yof"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8s2kk"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_qnylg"]
+size = Vector3(1, 1, 0.3)
+
+[sub_resource type="PrismMesh" id="PrismMesh_boc0t"]
+size = Vector3(0.8, 0.5, 0.1)
+
+[node name="Skater" type="CharacterBody3D"]
+script = ExtResource("1_q1yof")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, -4.23516e-22, 0, 1, 0, 0, -3.55271e-15, 1, -1.4105e-15, 0.298657, -0.453738)
+target_position = Vector3(0, 0, -1)
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 3.15544e-30, 0, 0, 0.3, 0, 0, 8.88178e-16, 1, -1.88081e-37, 0.3, 8.29045e-16)
+shape = SubResource("BoxShape3D_8s2kk")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
+transform = Transform3D(1, 4.59763e-37, -1.05181e-29, 0, -1.45705e-07, 3.33333, 0, -1, -4.37114e-08, -3.76158e-37, 2.38419e-07, -8.29045e-16)
+mesh = SubResource("PrismMesh_qnylg")
+skeleton = NodePath("../..")
+
+[node name="cursor" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.300309, -1.57261)
+transparency = 0.8
+mesh = SubResource("PrismMesh_boc0t")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.267238, 0.96363, 0, -0.96363, 0.267238, 0, 10.045, 4.78142)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
