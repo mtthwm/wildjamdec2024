@@ -25,8 +25,6 @@ func turn(direction: int) -> void:
 func _physics_process(delta: float) -> void:
 	velocity = pointer.normalized() * SPEED
 	
-	print(velocity)
-	
 	if Input.is_action_pressed("w_pressed", false):
 		if pointer.angle_to(Vector3(-1,0,0)) > PI/2:
 			turn(1)
