@@ -63,14 +63,8 @@ func _physics_process(delta: float) -> void:
 		instance.position = playergun.global_position
 		instance.transform.basis = playergun.global_transform.basis
 		get_parent().add_child(instance)
-<<<<<<< HEAD
 		timer.start(ATTACK_DELAY)
 	
-	
-=======
-		timer.start(0.5)
-
->>>>>>> 1d7dc9d1ae4c431df72e0776e5688bfeccb65969
 	#  # Add the gravity.
 	#  if not is_on_floor():
 	#  	velocity += get_gravity() * delta
