@@ -1,8 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://n1ealth2vg8t"]
+[gd_scene load_steps=10 format=3 uid="uid://du7xlbfafwo32"]
 
 [ext_resource type="ArrayMesh" uid="uid://nwnesasp4qft" path="res://Models/GingerbreadEnemy/GingerbreadEnemy.obj" id="1_kxf6i"]
 [ext_resource type="PackedScene" uid="uid://dymwl7ethq0vo" path="res://Models/Cabin/cabin.glb" id="2_mlva7"]
-[ext_resource type="PackedScene" uid="uid://cddnjti2ix15w" path="res://Models/SnowmanEnemy/Snowman.glb" id="3_0oyix"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_wi7sm"]
 
@@ -200,6 +199,3 @@ libraries = {
 autoplay = "Run"
 
 [node name="cabin" parent="." instance=ExtResource("2_mlva7")]
-
-[node name="Snowman" parent="." instance=ExtResource("3_0oyix")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 235.038, -44.3048, 224)
