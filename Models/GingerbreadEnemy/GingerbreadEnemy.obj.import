@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://nwnesasp4qft"
+path="res://.godot/imported/GingerbreadEnemy.obj-526057a3e85b284e53b5d3f4762e8d4d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/GingerbreadEnemy.obj-526057a3e85b284e53b5d3f4762e8d4d.mesh"]
+
+source_file="res://Models/GingerbreadEnemy/GingerbreadEnemy.obj"
+dest_files=["res://.godot/imported/GingerbreadEnemy.obj-526057a3e85b284e53b5d3f4762e8d4d.mesh", "res://.godot/imported/GingerbreadEnemy.obj-526057a3e85b284e53b5d3f4762e8d4d.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
