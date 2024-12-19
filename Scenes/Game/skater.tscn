@@ -35,10 +35,6 @@ top_level = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.299647, -0.353018)
 target_position = Vector3(0, 0, -1)
 
-[node name="Camera3D2" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.267238, 0.963631, 0, -0.963631, 0.267238, 0, 10.045, 4.78142)
-top_level = true
-
 [node name="Timer" type="Timer" parent="."]
 wait_time = 1.5
 one_shot = true

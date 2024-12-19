@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bq2yq6o38kab4"]
 
-[ext_resource type="PackedScene" uid="uid://deavkqm2skg1p" path="res://Scenes/skater.tscn" id="1_q3yui"]
-[ext_resource type="PackedScene" uid="uid://1q7xvt6vqpsf" path="res://Scenes/rock.tscn" id="2_uu7pq"]
+[ext_resource type="PackedScene" uid="uid://deavkqm2skg1p" path="res://Scenes/Game/skater.tscn" id="1_q3yui"]
+[ext_resource type="PackedScene" uid="uid://1q7xvt6vqpsf" path="res://Scenes/Game/rock.tscn" id="2_uu7pq"]
 
 [node name="Game" type="Node3D"]
 
