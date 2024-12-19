@@ -56,13 +56,13 @@ func _physics_process(delta: float) -> void:
 		turn(-1)
 
 	#Shoot
-	if (Input.is_action_just_released("left_mouse_click", false) 
+	if (Input.is_action_pressed("left_mouse_click", false) 
 	&& timer.is_stopped()):
 		var instance = bullet.instantiate()
 		instance.position = playergun.global_position
 		instance.transform.basis = playergun.global_transform.basis
 		get_parent().add_child(instance)
-		timer.start(0.2)
+		timer.start(0.5)
 
 	#  # Add the gravity.
 	#  if not is_on_floor():
