@@ -7,7 +7,7 @@
 size = Vector3(0.8, 0.5, 0.1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_n5pok"]
-size = Vector3(0.5, 1, 1)
+size = Vector3(0.5, 0.3, 1)
 
 [sub_resource type="ORMMaterial3D" id="ORMMaterial3D_edviy"]
 emission_enabled = true
@@ -44,13 +44,12 @@ wait_time = 1.5
 one_shot = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.3, -2.96059e-15, 0, 8.88178e-16, 1, -1.88081e-37, 0.3, 8.29045e-16)
+transform = Transform3D(1, 0, 0, 0, 1, -2.96059e-15, 0, 2.96059e-15, 1, -1.88081e-37, 0.3, 8.29045e-16)
 shape = SubResource("BoxShape3D_n5pok")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
-transform = Transform3D(1, 4.59763e-37, -1.05181e-29, 0, -1.45705e-07, 3.33333, 0, -1, -4.37114e-08, -3.76158e-37, 2.38419e-07, -8.29045e-16)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 4.59763e-37, -1.05181e-29, 0, -4.37115e-08, 0.999999, 0, -1, -4.37114e-08, -5.64239e-37, 0.3, 2.11758e-22)
 material_override = SubResource("ORMMaterial3D_edviy")
 mesh = SubResource("PrismMesh_qnylg")
-skeleton = NodePath("../..")
 
 [connection signal="timeout" from="Timer" to="aim" method="_on_timer_timeout"]

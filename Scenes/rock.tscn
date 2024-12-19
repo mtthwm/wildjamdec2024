@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://1q7xvt6vqpsf"]
+[gd_scene load_steps=5 format=3 uid="uid://1q7xvt6vqpsf"]
 
 [ext_resource type="Script" path="res://Scripts/rock.gd" id="1_4180p"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_cg3dd"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_82rp3"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wdqpi"]
 
@@ -13,6 +15,7 @@ script = ExtResource("1_4180p")
 mesh = SubResource("BoxMesh_cg3dd")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_82rp3")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 shape = SubResource("BoxShape3D_wdqpi")
