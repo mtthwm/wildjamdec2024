@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=3 uid="uid://bq2yq6o38kab4"]
+
+[ext_resource type="PackedScene" uid="uid://deavkqm2skg1p" path="res://Scenes/Game/skater.tscn" id="2_pdlqr"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g2t2m"]
+size = Vector3(1, 1, 20)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_s03gr"]
+size = Vector3(1, 1, 20)
+
+[node name="Game" type="Node3D"]
+
+[node name="Skater" parent="." instance=ExtResource("2_pdlqr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000661075, 0, -0.000576496)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 16, 6)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+process_priority = 1
+process_physics_priority = 1
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, -8)
+shape = SubResource("BoxShape3D_g2t2m")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D"]
+process_priority = 1
+process_physics_priority = 1
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 0)
+shape = SubResource("BoxShape3D_s03gr")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D"]
+process_priority = 1
+process_physics_priority = 1
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 8)
+shape = SubResource("BoxShape3D_g2t2m")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="StaticBody3D"]
+process_priority = 1
+process_physics_priority = 1
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
+shape = SubResource("BoxShape3D_g2t2m")

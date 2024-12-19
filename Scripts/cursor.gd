@@ -9,8 +9,7 @@ extends CharacterBody3D
 
 
 
-var bullet = load("res://Scenes/bullet.tscn")
-var instance
+var bullet = load("res://Scenes/Game/bullet.tscn")
 
 
 # Called when the node enters the scene tree for the first time.

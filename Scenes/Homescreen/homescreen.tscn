@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://sdv170l1v0x2"]
+
+[node name="Window" type="Window"]
+auto_translate_mode = 1
