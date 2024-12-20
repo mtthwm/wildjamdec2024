@@ -87,8 +87,9 @@ func _take_damage(damage: int) -> void:
 		print("Ouch!")
 		print("health remaining: " + str(health))
 	
-	if health <= 0:
-		var game_over = preload("res://Scenes/Homescreen/game_over.tscn").instantiate()
-		get_tree().root.add_child(game_over)
-		get_tree().root.remove_child(get_parent())
-		
+		if health <= 0:
+			get_parent().queue_free()
+			process_mode = Node.PROCESS_MODE_DISABLED
+			var game_over = load("res://Scenes/Homescreen/game_over.tscn").instantiate()
+			get_tree().root.add_child(game_over)
+	
