@@ -26,9 +26,11 @@ target_position = Vector3(0, 0, -0.3)
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+collision_layer = 4
+collision_mask = 4
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
 shape = SubResource("SphereShape3D_qln0x")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

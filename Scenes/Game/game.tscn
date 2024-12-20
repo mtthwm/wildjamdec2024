@@ -20,12 +20,9 @@ tracks/0/path = NodePath("AnimationPlayer")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.4, 3.1),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(2.06667),
+"transitions": PackedFloat32Array(1),
 "values": [{
-"args": [],
-"method": &"_wave1"
-}, {
 "args": [],
 "method": &"_wave1"
 }]

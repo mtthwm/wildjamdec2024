@@ -3,8 +3,12 @@ extends CharacterBody3D
 const SPEED = 8
 const TURN_SPEED = 0.08
 const ATTACK_DELAY = 0.4
+const DAMAGE_DELAY = 0.5
 #const JUMP_VELOCITY = 4.5
-@onready var timer: Timer = $Timer
+var health = 3
+
+@onready var attack_timer: Timer = $Attack_Timer
+@onready var damage_timer: Timer = $Damage_Timer
 @onready var playergun: RayCast3D = $aim/RayCast3D
 
 var bullet = load("res://Scenes/Game/bullet.tscn")
@@ -13,7 +17,7 @@ var pointer = velocity
 
 func _ready() -> void:
 	pointer.z = -1 * SPEED
-	timer.start(ATTACK_DELAY)
+	attack_timer.start(ATTACK_DELAY)
 
 # if 'direction' is +1, the character turns left a fixed amount. 
 # if 'direction' is -1, the character turns right.
@@ -22,7 +26,7 @@ func turn(direction: int) -> void:
 	pointer.x = pointer.rotated(Vector3.UP, direction * TURN_SPEED).x
 	pointer.z = pointer.rotated(Vector3.UP, direction * TURN_SPEED).z
 
-# controls the movement of the character. key inputs control turns.
+# controls the movement of the character. Key inputs control turns.
 func _physics_process(delta: float) -> void:
 	velocity = pointer.normalized() * SPEED
 	
@@ -58,12 +62,12 @@ func _physics_process(delta: float) -> void:
 	
 	#Shoot
 	if (Input.is_action_pressed("left_mouse_click", false) 
-	&& timer.is_stopped()):
+	&& attack_timer.is_stopped()):
 		var instance = bullet.instantiate()
 		instance.position = playergun.global_position
 		instance.transform.basis = playergun.global_transform.basis
 		get_parent().add_child(instance)
-		timer.start(ATTACK_DELAY)
+		attack_timer.start(ATTACK_DELAY)
 	
 	#  # Add the gravity.
 	#  if not is_on_floor():
@@ -74,7 +78,17 @@ func _physics_process(delta: float) -> void:
 	#  	velocity.y = JUMP_VELOCITY
 	
 	move_and_slide()
-	
 
-func get_pos() -> Vector3:
-	return Vector3(position.x, 0, position.y)
+# if the skater hasn't been hit in 1 second or more, take damage
+func _take_damage(damage: int) -> void:
+	if damage_timer.is_stopped():
+		health = health - damage
+		damage_timer.start(DAMAGE_DELAY)
+		print("Ouch!")
+		print("health remaining: " + str(health))
+	
+	if health <= 0:
+		var game_over = preload("res://Scenes/Homescreen/game_over.tscn").instantiate()
+		get_tree().root.add_child(game_over)
+		get_tree().root.remove_child(get_parent())
+		

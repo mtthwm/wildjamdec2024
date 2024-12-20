@@ -17,6 +17,8 @@ emission = Color(1, 1, 1, 1)
 size = Vector3(0.8, 1, 0.3)
 
 [node name="Skater" type="CharacterBody3D"]
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_q1yof")
 
 [node name="aim" type="CharacterBody3D" parent="."]
@@ -35,8 +37,11 @@ top_level = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.299647, -0.353018)
 target_position = Vector3(0, 0, -1)
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Attack_Timer" type="Timer" parent="."]
 wait_time = 1.5
+one_shot = true
+
+[node name="Damage_Timer" type="Timer" parent="."]
 one_shot = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -48,4 +53,4 @@ transform = Transform3D(1, 4.59763e-37, -1.05181e-29, 0, -4.37115e-08, 0.999999,
 material_override = SubResource("ORMMaterial3D_edviy")
 mesh = SubResource("PrismMesh_qnylg")
 
-[connection signal="timeout" from="Timer" to="aim" method="_on_timer_timeout"]
+[connection signal="timeout" from="Attack_Timer" to="aim" method="_on_timer_timeout"]

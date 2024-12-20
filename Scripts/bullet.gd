@@ -12,8 +12,13 @@ func _ready() -> void:
 	timer.set_wait_time(1)
 	timer.start()
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	position += transform.basis * Vector3(0, 0, -SPEED) * delta
+	
+	var body = $RigidBody3D
+	var collision = body.move_and_collide(Vector3(0,0,0))
+	if collision is KinematicCollision3D:
+		collision.get_collider()._take_damage(1)
+		queue_free()
 	
