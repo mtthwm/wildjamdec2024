@@ -10,6 +10,7 @@ var health = 3
 @onready var attack_timer: Timer = $Attack_Timer
 @onready var damage_timer: Timer = $Damage_Timer
 @onready var playergun: RayCast3D = $aim/RayCast3D
+@onready var progress_bar: ProgressBar = $"../Camera3D2/ProgressBar"
 
 var bullet = load("res://Scenes/Game/bullet.tscn")
 var pointer = velocity
@@ -83,6 +84,7 @@ func _physics_process(delta: float) -> void:
 func _take_damage(damage: int) -> void:
 	if damage_timer.is_stopped():
 		health = health - damage
+		progress_bar.value = health
 		damage_timer.start(DAMAGE_DELAY)
 		print("Ouch!")
 		print("health remaining: " + str(health))
