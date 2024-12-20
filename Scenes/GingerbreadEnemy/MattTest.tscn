@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bq3eppqpoeqy5"]
+[gd_scene load_steps=10 format=3 uid="uid://babmi3p105cck"]
 
 [ext_resource type="ArrayMesh" uid="uid://nwnesasp4qft" path="res://Models/GingerbreadEnemy/GingerbreadEnemy.obj" id="1_kxf6i"]
 [ext_resource type="PackedScene" uid="uid://dymwl7ethq0vo" path="res://Models/Cabin/cabin.glb" id="2_mlva7"]
