@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 [gd_scene load_steps=11 format=3 uid="uid://n1ealth2vg8t"]
+=======
+[gd_scene load_steps=10 format=3 uid="uid://babmi3p105cck"]
+>>>>>>> 94fd5c0a783608fdf72ee93c1167c98bca0837e0
 
 [ext_resource type="ArrayMesh" uid="uid://nwnesasp4qft" path="res://Models/GingerbreadEnemy/GingerbreadEnemy.obj" id="1_kxf6i"]
 [ext_resource type="PackedScene" uid="uid://dymwl7ethq0vo" path="res://Models/Cabin/cabin.glb" id="2_mlva7"]

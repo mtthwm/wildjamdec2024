@@ -3,11 +3,8 @@ extends CharacterBody3D
 @onready var aim: MeshInstance3D = $aim
 @onready var cursor: MeshInstance3D = $cursor
 @onready var playergun: RayCast3D = $"RayCast3D"
-@onready var camera: Camera3D = $"../Camera3D2"
+@onready var camera: Camera3D = $"../../Camera3D2"
 @onready var timer: Timer = $"../Timer"
-
-
-
 
 var bullet = load("res://Scenes/Game/bullet.tscn")
 
@@ -28,7 +25,7 @@ func look_at_cursor():
 	var player_pos = global_transform.origin
 	var dropPlane = Plane(Vector3(0, 1, 0), player_pos.y)
 	
-	var ray_length = 100
+	var ray_length = 1000
 	var mouse_pos = get_viewport().get_mouse_position()
 	var from = camera.project_ray_origin(mouse_pos)
 	var to = from + camera.project_ray_normal(mouse_pos) * ray_length

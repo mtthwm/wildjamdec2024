@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://bu2k72l4fpr0x"]
+
+[ext_resource type="Script" path="res://Scripts/button_2.gd" id="1_axee1"]
+
+[node name="Game_Over" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 517.0
+offset_top = 198.0
+offset_right = 590.0
+offset_bottom = 238.0
+text = "You Died"
+
+[node name="Button2" type="Button" parent="."]
+editor_description = "New Game"
+layout_mode = 0
+offset_left = 428.0
+offset_top = 358.0
+offset_right = 677.0
+offset_bottom = 469.0
+text = "New Game"
+script = ExtResource("1_axee1")

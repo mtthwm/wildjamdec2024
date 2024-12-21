@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://5adjvk7dww3r"]
+[gd_scene load_steps=8 format=3 uid="uid://5adjvk7dww3r"]
 
 [ext_resource type="Script" path="res://Scripts/bullet.gd" id="1_rqudi"]
 
@@ -13,6 +13,18 @@ height = 0.6
 [sub_resource type="SphereShape3D" id="SphereShape3D_qln0x"]
 radius = 0.291503
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dg7dp"]
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_cxehk"]
+direction = Vector3(0, 0.5, 1)
+initial_velocity_min = 5.0
+initial_velocity_max = 8.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_dfc6u"]
+size = Vector3(0.1, 0.1, 0.1)
+
 [node name="Bullet" type="Node3D"]
 script = ExtResource("1_rqudi")
 
@@ -26,9 +38,21 @@ target_position = Vector3(0, 0, -0.3)
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+collision_layer = 4
+collision_mask = 4
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
 shape = SubResource("SphereShape3D_qln0x")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.357723)
+material_override = SubResource("StandardMaterial3D_dg7dp")
+emitting = false
+amount = 10
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_cxehk")
+draw_pass_1 = SubResource("BoxMesh_dfc6u")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
