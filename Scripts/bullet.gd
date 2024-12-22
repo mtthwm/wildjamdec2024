@@ -23,7 +23,7 @@ func _process(delta: float) -> void:
 		mesh.visible = false
 		particles.emitting = true
 		collision.get_collider()._take_damage(1)
-		body.process_mode = Node.PROCESS_MODE_DISABLED 
+		#body.process_mode = Node.PROCESS_MODE_DISABLED 
 		await get_tree().create_timer(1.0).timeout
 		queue_free()
 	
