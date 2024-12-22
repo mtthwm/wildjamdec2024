@@ -6,11 +6,11 @@
 [node name="wave1" type="Node3D"]
 
 [node name="gingerbread" parent="." instance=ExtResource("1_nhgo5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.6666, 0, -4.04457)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -48.0563, 0, -4.04457)
 baby = true
 
 [node name="gingerbread2" parent="." instance=ExtResource("1_nhgo5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.564, 0, -6.482)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -12.564, 0, -52.4602)
 baby = true
 
 [node name="gingerbread3" parent="." instance=ExtResource("1_nhgo5")]
