@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cs156h2trm6e7"
 path.s3tc="res://.godot/imported/PenguinRig_PenguinTex19.png-581b548c01d0fcd3eb457136424ab169.s3tc.ctex"
+path.etc2="res://.godot/imported/PenguinRig_PenguinTex19.png-581b548c01d0fcd3eb457136424ab169.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Models/Penguin/PenguinRig_PenguinTex19.png"
-dest_files=["res://.godot/imported/PenguinRig_PenguinTex19.png-581b548c01d0fcd3eb457136424ab169.s3tc.ctex"]
+dest_files=["res://.godot/imported/PenguinRig_PenguinTex19.png-581b548c01d0fcd3eb457136424ab169.s3tc.ctex", "res://.godot/imported/PenguinRig_PenguinTex19.png-581b548c01d0fcd3eb457136424ab169.etc2.ctex"]
 
 [params]
 

@@ -16,9 +16,9 @@ modulate = Color(1, 0, 0, 1)
 top_level = true
 layout_mode = 0
 offset_left = 372.0
-offset_top = 197.0
-offset_right = 869.0
-offset_bottom = 305.0
+offset_top = 150.0
+offset_right = 745.0
+offset_bottom = 258.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 64
 text = "Rink of Fire"
@@ -35,6 +35,6 @@ text = "New Game"
 script = ExtResource("1_aypej")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(581.5, 332)
-scale = Vector2(1.13883, 1.17254)
+position = Vector2(689.501, 392.999)
+scale = Vector2(1.34854, 1.38733)
 texture = ExtResource("2_jsces")

@@ -231,7 +231,6 @@ transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, 0, -0.5, 0)
 
 [node name="Background" parent="." instance=ExtResource("5_echvu")]
 transform = Transform3D(0.41, 0, 0, 0, 0.41, 0, 0, 0, 0.4, 0, -0.5, 0)
-visible = false
 
 [node name="Tree" parent="." instance=ExtResource("6_3arld")]
 transform = Transform3D(0.016, 0, 0, 0, 0.016, 0, 0, 0, 0.016, -16.5523, -0.920756, 2.49986)
@@ -244,7 +243,6 @@ transform = Transform3D(0.016, 0, 0, 0, 0.016, 0, 0, 0, 0.016, -14.2988, -0.9207
 
 [node name="Background2" parent="." instance=ExtResource("5_echvu")]
 transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, 0, -0.5, 0)
-visible = false
 
 [node name="cabin" parent="." instance=ExtResource("7_j0hnj")]
 transform = Transform3D(0.0582087, 0, 0.11624, 0, 0.13, 0, -0.11624, 0, 0.0582087, 16.898, 0.3, -1.878)
