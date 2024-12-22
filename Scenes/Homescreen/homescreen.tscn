@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://ch38tj24ykpte"]
+[gd_scene load_steps=3 format=3 uid="uid://ch38tj24ykpte"]
 
 [ext_resource type="Script" path="res://Scripts/button.gd" id="1_aypej"]
+[ext_resource type="Texture2D" uid="uid://b6o0hukbnfaka" path="res://Scenes/Homescreen/Screenshot 2024-12-21 164734.png" id="2_jsces"]
 
 [node name="Homescreen" type="Control"]
 layout_mode = 3
@@ -11,15 +12,20 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
+modulate = Color(1, 0, 0, 1)
+top_level = true
 layout_mode = 0
-offset_left = 455.0
-offset_top = 196.0
-offset_right = 656.0
-offset_bottom = 236.0
-text = "Skater Game (Name TBD)"
+offset_left = 372.0
+offset_top = 197.0
+offset_right = 869.0
+offset_bottom = 305.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 64
+text = "Rink of Fire"
 
 [node name="Button" type="Button" parent="."]
 editor_description = "New Game"
+top_level = true
 layout_mode = 0
 offset_left = 428.0
 offset_top = 358.0
@@ -27,3 +33,8 @@ offset_right = 677.0
 offset_bottom = 469.0
 text = "New Game"
 script = ExtResource("1_aypej")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(581.5, 332)
+scale = Vector2(1.13883, 1.17254)
+texture = ExtResource("2_jsces")

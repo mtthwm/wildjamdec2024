@@ -4,7 +4,6 @@ extends CharacterBody3D
 @onready var cursor: MeshInstance3D = $cursor
 @onready var playergun: RayCast3D = $"RayCast3D"
 @onready var camera: Camera3D = $"../../Camera3D2"
-@onready var timer: Timer = $"../Timer"
 
 var bullet = load("res://Scenes/Game/bullet.tscn")
 

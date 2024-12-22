@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://byjt6ke14106s"]
+
+[ext_resource type="PackedScene" uid="uid://ch38tj24ykpte" path="res://Scenes/Homescreen/homescreen.tscn" id="1_sjcq6"]
+[ext_resource type="PackedScene" uid="uid://dymwl7ethq0vo" path="res://Models/Cabin/cabin.glb" id="2_6kqck"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.760406, 0.0588611, -0.646775, 2.76044e-09, 0.995884, 0.0906326, 0.649448, 0.0689176, -0.757276, -12, 4.14651, -8.13115)
+
+[node name="Homescreen" parent="Camera3D" instance=ExtResource("1_sjcq6")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.5, 0.752279, -0.42904, 0.866025, -0.434329, 0.247707, 0, -0.495413, -0.868657, 0, 11, 0)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="DirectionalLight3D"]
+transform = Transform3D(0.5022, 0.811504, 0.29876, -0.786279, 0.572316, -0.232853, -0.359946, -0.11797, 0.925485, -5.09808, 1.00948, 7.48269)
+
+[node name="cabin" parent="." instance=ExtResource("2_6kqck")]
