@@ -11,7 +11,7 @@ func _ready() -> void:
 	if baby == true:
 		SPEED = 0.2
 		health = 1
-	else if boss == true:
+	elif boss == true:
 		SPEED = 0.11
 		health = 100
 	else:
