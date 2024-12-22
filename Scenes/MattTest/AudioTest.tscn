@@ -1,0 +1,181 @@
+[gd_scene load_steps=15 format=3 uid="uid://bhga2h0mifeak"]
+
+[ext_resource type="PackedScene" uid="uid://deavkqm2skg1p" path="res://Scenes/Game/skater.tscn" id="1_d2r87"]
+[ext_resource type="Texture2D" uid="uid://bi30akch8fsls" path="res://Scenes/Game/penguin.webp" id="2_ig2ru"]
+[ext_resource type="Script" path="res://Scripts/control.gd" id="3_u3idn"]
+[ext_resource type="Script" path="res://Scripts/animation_player.gd" id="4_om73h"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_uudqv"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g2t2m"]
+size = Vector3(1, 1, 30)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_s03gr"]
+size = Vector3(1, 1, 20)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wp4u8"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ortam"]
+bg_color = Color(0.821911, 2.62313e-06, 7.70092e-07, 1)
+border_width_left = 3
+border_width_top = 4
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+
+[sub_resource type="LabelSettings" id="LabelSettings_bfox4"]
+font_size = 32
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g1fwq"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cmkte"]
+bg_color = Color(1, 0, 0.188235, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_sebs7"]
+resource_name = "new_animation"
+length = 200.0
+loop_mode = 2
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(2.03333, 10.0333, 33.0667, 70.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"values": [{
+"args": [],
+"method": &"_wave1"
+}, {
+"args": [],
+"method": &"_wave2"
+}, {
+"args": [],
+"method": &"_wave3"
+}, {
+"args": [],
+"method": &"_wave5"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_db1xb"]
+_data = {
+"new_animation": SubResource("Animation_sebs7")
+}
+
+[node name="Game" type="Node3D"]
+
+[node name="Skater" parent="." instance=ExtResource("1_d2r87")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000661075, 0, -0.000576496)
+
+[node name="Sprite3D" type="Sprite3D" parent="Skater"]
+transform = Transform3D(1, 0, 0, 0, 0.258819, 0.965926, 0, -0.965926, 0.258819, -0.000661075, 1, 0.000576496)
+texture = SubResource("ViewportTexture_uudqv")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 16, 6)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+process_priority = 1
+process_physics_priority = 1
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, -8)
+shape = SubResource("BoxShape3D_g2t2m")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D"]
+process_priority = 1
+process_physics_priority = 1
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 0)
+shape = SubResource("BoxShape3D_s03gr")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="StaticBody3D"]
+process_priority = 1
+process_physics_priority = 1
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 8)
+shape = SubResource("BoxShape3D_g2t2m")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="StaticBody3D"]
+process_priority = 1
+process_physics_priority = 1
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 0)
+shape = SubResource("BoxShape3D_g2t2m")
+
+[node name="Camera3D2" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.34202, 0.939693, 0, -0.939693, 0.34202, 0, 10, 5)
+top_level = true
+
+[node name="HealthBar" type="ProgressBar" parent="Camera3D2"]
+offset_left = 88.0
+offset_top = 47.0
+offset_right = 333.0
+offset_bottom = 78.0
+theme_override_styles/background = SubResource("StyleBoxFlat_wp4u8")
+theme_override_styles/fill = SubResource("StyleBoxFlat_ortam")
+max_value = 5.0
+value = 5.0
+show_percentage = false
+
+[node name="Health" type="Label" parent="Camera3D2"]
+offset_left = 89.0
+offset_right = 192.0
+offset_bottom = 45.0
+text = "Health"
+label_settings = SubResource("LabelSettings_bfox4")
+
+[node name="Penguin" type="Sprite2D" parent="Camera3D2"]
+position = Vector2(40.9845, 39.625)
+scale = Vector2(0.270619, 0.270619)
+texture = ExtResource("2_ig2ru")
+
+[node name="Control" type="Control" parent="Camera3D2"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("3_u3idn")
+
+[node name="ProgressBar2" type="ProgressBar" parent="Camera3D2/Control"]
+layout_mode = 0
+offset_left = 1081.0
+offset_top = 22.0
+offset_right = 1117.0
+offset_bottom = 408.0
+theme_override_styles/background = SubResource("StyleBoxFlat_g1fwq")
+theme_override_styles/fill = SubResource("StyleBoxFlat_cmkte")
+value = 100.0
+fill_mode = 3
+show_percentage = false
+
+[node name="Timer" type="Timer" parent="Camera3D2/Control"]
+autostart = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_db1xb")
+}
+autoplay = "new_animation"
+script = ExtResource("4_om73h")
+
+[connection signal="timeout" from="Camera3D2/Control/Timer" to="Camera3D2/Control" method="_on_timer_timeout"]
+[connection signal="timeout" from="Camera3D2/Control/Timer" to="Camera3D2/Control/ProgressBar2" method="_on_timer_timeout"]
