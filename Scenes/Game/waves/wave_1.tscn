@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bpl0vpp04l7o5"]
+[gd_scene load_steps=3 format=3 uid="uid://bpl0vpp04l7o5"]
 
 [ext_resource type="PackedScene" uid="uid://c1ipb2jk02avn" path="res://Scenes/Game/gingerbread.tscn" id="1_fwpsh"]
+[ext_resource type="PackedScene" uid="uid://vt5ulj20de7m" path="res://Scenes/Game/snowman.tscn" id="2_vli7t"]
 
 [node name="wave1" type="Node3D"]
 
@@ -21,3 +22,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -10)
 
 [node name="gingerbread6" parent="." instance=ExtResource("1_fwpsh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -10)
+
+[node name="snowman" parent="." instance=ExtResource("2_vli7t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
