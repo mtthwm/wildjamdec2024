@@ -1,12 +1,17 @@
-[gd_scene load_steps=18 format=3 uid="uid://bq2yq6o38kab4"]
+[gd_scene load_steps=23 format=3 uid="uid://bq2yq6o38kab4"]
 
 [ext_resource type="Texture2D" uid="uid://bi30akch8fsls" path="res://Scenes/Game/penguin.webp" id="2_esk4n"]
 [ext_resource type="Script" path="res://Scripts/animation_player.gd" id="2_hejmx"]
 [ext_resource type="PackedScene" uid="uid://deavkqm2skg1p" path="res://Scenes/Game/skater.tscn" id="2_pdlqr"]
 [ext_resource type="Script" path="res://Scripts/control.gd" id="3_iky4f"]
+[ext_resource type="AudioStream" uid="uid://c4el6wwe64nxr" path="res://Models/Audio/Carol of the Bells Intro Strings.wav" id="4_shho6"]
+[ext_resource type="AudioStream" uid="uid://byog7pwr16tjj" path="res://Models/Audio/Carol of the Bells Main.wav" id="5_cmeif"]
 [ext_resource type="PackedScene" uid="uid://bik8vpff271ni" path="res://Models/Background/Background.glb" id="5_echvu"]
 [ext_resource type="PackedScene" uid="uid://by6rdmk4mp40b" path="res://Models/Tree/Tree.glb" id="6_3arld"]
+[ext_resource type="AudioStream" uid="uid://brtl5domdp6b" path="res://Models/Audio/Carol of the Bells Call and Response.wav" id="6_cuy64"]
 [ext_resource type="PackedScene" uid="uid://dymwl7ethq0vo" path="res://Models/Cabin/cabin.glb" id="7_j0hnj"]
+[ext_resource type="AudioStream" uid="uid://cdpnvwfdmwu27" path="res://Models/Audio/Carol of the Bells Bridge.wav" id="7_v8rik"]
+[ext_resource type="AudioStream" uid="uid://bmojda4xmb0m6" path="res://Models/Audio/Carol of the Bells Ending.wav" id="8_qvxy3"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_uudqv"]
 viewport_path = NodePath("SubViewport")
@@ -80,16 +85,49 @@ tracks/0/keys = {
 "method": &"_wave5"
 }]
 }
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer3D")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 2.43,
+"stream": ExtResource("4_shho6")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("5_cmeif")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("6_cuy64")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("7_v8rik")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("8_qvxy3")
+}],
+"times": PackedFloat32Array(0, 33.5667, 42.5667, 52.7, 66.2)
+}
+tracks/1/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_db1xb"]
 _data = {
 "new_animation": SubResource("Animation_sebs7")
 }
 
-[node name="Game" type="Node3D"]
+[node name="Game2" type="Node3D"]
 
 [node name="Skater" parent="." instance=ExtResource("2_pdlqr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000661075, 0, -0.000576496)
+collision_layer = 3
+collision_mask = 3
 
 [node name="Sprite3D" type="Sprite3D" parent="Skater"]
 transform = Transform3D(1, 0, 0, 0, 0.258819, 0.965926, 0, -0.965926, 0.258819, -0.000661075, 1, 0.000576496)
@@ -203,6 +241,8 @@ transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, 0, -0.5, 0)
 
 [node name="cabin" parent="." instance=ExtResource("7_j0hnj")]
 transform = Transform3D(0.0582087, 0, 0.11624, 0, 0.13, 0, -0.11624, 0, 0.0582087, 16.8976, 0, -1.87787)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 
 [connection signal="timeout" from="Camera3D2/Control/Timer" to="Camera3D2/Control" method="_on_timer_timeout"]
 [connection signal="timeout" from="Camera3D2/Control/Timer" to="Camera3D2/Control/ProgressBar2" method="_on_timer_timeout"]

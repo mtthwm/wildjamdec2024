@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bmojda4xmb0m6"
+path="res://.godot/imported/Carol of the Bells Ending.wav-111c4b1e617f048f5f6e297778aa906f.sample"
+
+[deps]
+
+source_file="res://Models/Audio/Carol of the Bells Ending.wav"
+dest_files=["res://.godot/imported/Carol of the Bells Ending.wav-111c4b1e617f048f5f6e297778aa906f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://byog7pwr16tjj"
+path="res://.godot/imported/Carol of the Bells Main.wav-0a677171fdc544a6059f22a081602062.sample"
+
+[deps]
+
+source_file="res://Models/Audio/Carol of the Bells Main.wav"
+dest_files=["res://.godot/imported/Carol of the Bells Main.wav-0a677171fdc544a6059f22a081602062.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
