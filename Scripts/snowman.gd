@@ -38,6 +38,8 @@ func _physics_process(delta: float) -> void:
 		get_parent().get_parent().add_child(instance)
 		timer.start(ATTACK_DELAY)
 	
+	rotate_y(-PI/2) # the model isn't forward by default
+	
 
 func _take_damage(damage: int) -> void:
 	health = health - damage

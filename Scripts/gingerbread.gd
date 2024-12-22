@@ -9,7 +9,7 @@ var health
 
 func _ready() -> void:
 	if baby == true:
-		SPEED = 0.2
+		SPEED = 0.14
 		health = 1
 	elif boss == true:
 		SPEED = 0.11
@@ -26,7 +26,7 @@ func _physics_process(delta: float) -> void:
 	velocity = target - position
 	velocity = velocity.normalized() * SPEED
 	look_at(target, Vector3.UP)
-	rotate_y(-PI/2) # the gingerbread model isn't forward by default
+	rotate_y(-PI/2) # the model isn't forward by default
 	
 	var collision = move_and_collide(velocity)
 	
