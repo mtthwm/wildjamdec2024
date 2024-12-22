@@ -1,6 +1,7 @@
 extends Node3D
 
 const SPEED = 20
+const POWER = 1
 @onready var mesh: MeshInstance3D = $MeshInstance3D
 @onready var ray: RayCast3D = $RayCast3D
 @onready var timer: Timer = $Timer
@@ -22,8 +23,8 @@ func _process(delta: float) -> void:
 	if collision is KinematicCollision3D:
 		mesh.visible = false
 		particles.emitting = true
-		collision.get_collider()._take_damage(1)
-		#body.process_mode = Node.PROCESS_MODE_DISABLED 
+		collision.get_collider()._take_damage(POWER)
+		body.process_mode = Node.PROCESS_MODE_DISABLED 
 		await get_tree().create_timer(1.0).timeout
 		queue_free()
 	

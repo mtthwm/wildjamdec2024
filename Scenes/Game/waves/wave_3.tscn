@@ -1,0 +1,54 @@
+[gd_scene load_steps=3 format=3 uid="uid://bpl0vpp04l7o5"]
+
+[ext_resource type="PackedScene" uid="uid://c1ipb2jk02avn" path="res://Scenes/Game/gingerbread.tscn" id="1_ebi3y"]
+[ext_resource type="PackedScene" uid="uid://vt5ulj20de7m" path="res://Scenes/Game/snowman.tscn" id="2_e5y21"]
+
+[node name="wave1" type="Node3D"]
+
+[node name="gingerbread5" parent="." instance=ExtResource("1_ebi3y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.3835, 0, -4.32225)
+
+[node name="gingerbread" parent="." instance=ExtResource("1_ebi3y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.0025, 0, -1.656)
+
+[node name="gingerbread8" parent="." instance=ExtResource("1_ebi3y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.3896, 0, 11.1768)
+
+[node name="gingerbread2" parent="." instance=ExtResource("1_ebi3y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.2985, 0, -6.482)
+
+[node name="gingerbread9" parent="." instance=ExtResource("1_ebi3y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.095, 0, -20.4071)
+
+[node name="gingerbread3" parent="." instance=ExtResource("1_ebi3y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.193, 0, -12.6621)
+
+[node name="gingerbread10" parent="." instance=ExtResource("1_ebi3y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.513, 0, -22.049)
+
+[node name="gingerbread4" parent="." instance=ExtResource("1_ebi3y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.611, 0, -14.304)
+
+[node name="gingerbread6" parent="." instance=ExtResource("1_ebi3y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.1255, 0, -14.6437)
+
+[node name="gingerbread11" parent="." instance=ExtResource("1_ebi3y")]
+transform = Transform3D(0.954651, 0, -0.297725, 0, 1, 0, 0.297725, 0, 0.954651, 10.5929, 0, 15.7224)
+
+[node name="gingerbread12" parent="." instance=ExtResource("1_ebi3y")]
+transform = Transform3D(0.954651, 0, -0.297725, 0, 1, 0, 0.297725, 0, 0.954651, 0.148897, 0, 24.6104)
+
+[node name="gingerbread7" parent="." instance=ExtResource("1_ebi3y")]
+transform = Transform3D(0.954652, 0, -0.297725, 0, 1, 0, 0.297725, 0, 0.954652, 14.3235, 0, 5.584)
+
+[node name="snowman4" parent="." instance=ExtResource("2_e5y21")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 17.588)
+
+[node name="snowman" parent="." instance=ExtResource("2_e5y21")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -25.4897)
+
+[node name="snowman2" parent="." instance=ExtResource("2_e5y21")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.107, 0, 0)
+
+[node name="snowman3" parent="." instance=ExtResource("2_e5y21")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.856, 0, 0)

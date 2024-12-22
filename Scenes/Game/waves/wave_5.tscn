@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://2rrt15qued34"]
+
+[ext_resource type="PackedScene" uid="uid://c1ipb2jk02avn" path="res://Scenes/Game/gingerbread.tscn" id="1_5u2x2"]
+[ext_resource type="PackedScene" uid="uid://vt5ulj20de7m" path="res://Scenes/Game/snowman.tscn" id="2_ul60l"]
+
+[node name="wave1" type="Node3D"]
+
+[node name="gingerbread" parent="." instance=ExtResource("1_5u2x2")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -23.268, 0, -1.656)
+boss = true
+
+[node name="snowman10" parent="." instance=ExtResource("2_ul60l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -90)
+
+[node name="snowman9" parent="." instance=ExtResource("2_ul60l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -80)
+
+[node name="snowman8" parent="." instance=ExtResource("2_ul60l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.7238, 0, -65.8365)
+
+[node name="snowman7" parent="." instance=ExtResource("2_ul60l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.7238, 0, -59.0627)
+
+[node name="snowman6" parent="." instance=ExtResource("2_ul60l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.7238, 0, -52.2888)
+
+[node name="snowman5" parent="." instance=ExtResource("2_ul60l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.7238, 0, -45.5149)
+
+[node name="snowman4" parent="." instance=ExtResource("2_ul60l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.7238, 0, -38.7411)
+
+[node name="snowman3" parent="." instance=ExtResource("2_ul60l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.7238, 0, -31.9672)
+
+[node name="snowman2" parent="." instance=ExtResource("2_ul60l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.7238, 0, -25.1933)
+
+[node name="snowman" parent="." instance=ExtResource("2_ul60l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.7238, 0, -18.4195)

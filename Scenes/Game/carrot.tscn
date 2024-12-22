@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://cqusmohsqpslb"]
+[gd_scene load_steps=9 format=3 uid="uid://cqusmohsqpslb"]
 
 [ext_resource type="Script" path="res://Scripts/bullet.gd" id="1_07bf6"]
+[ext_resource type="Script" path="res://Scripts/rigid_body_3d.gd" id="2_4b42h"]
 
 [sub_resource type="ORMMaterial3D" id="ORMMaterial3D_tcdh3"]
 emission_enabled = true
@@ -41,6 +42,7 @@ wait_time = 5.0
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
 collision_layer = 8
 collision_mask = 8
+script = ExtResource("2_4b42h")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
 shape = SubResource("SphereShape3D_qln0x")

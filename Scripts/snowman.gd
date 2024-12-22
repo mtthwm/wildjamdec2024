@@ -6,10 +6,7 @@ const ATTACK_DELAY = 1
 var health = 2
 
 @onready var timer: Timer = $"Timer"
-@onready var skater: CharacterBody3D = $"../../skater"
-
 @onready var shooter: RayCast3D = $"RayCast3D"
-@onready var camera: Camera3D = $"../../Camera3D2"
 
 var carrot = load("res://Scenes/Game/carrot.tscn")
 
@@ -21,8 +18,8 @@ func _physics_process(delta: float) -> void:
 	var skater = get_node("/root/Game/Skater")
 	var target = skater.get_position()
 	
-	velocity = target - position
-	velocity = velocity.normalized() * SPEED
+	var path = target - position
+	velocity = path.normalized() * SPEED
 	look_at(target, Vector3.UP)
 	
 	var collision = move_and_collide(velocity)
@@ -32,7 +29,7 @@ func _physics_process(delta: float) -> void:
 		if collision.get_collider() == skater:
 			skater._take_damage(1)
 
-	if timer.is_stopped():
+	if timer.is_stopped() && path.length() <= 12:
 		var instance = carrot.instantiate()
 		instance.position = position
 		shooter.global_transform.origin = target + Vector3(0, 1, 0)

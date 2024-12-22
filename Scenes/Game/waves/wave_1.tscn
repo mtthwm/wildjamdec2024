@@ -1,27 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://bpl0vpp04l7o5"]
+[gd_scene load_steps=2 format=3 uid="uid://dbv0vswbhsv2l"]
 
-[ext_resource type="PackedScene" uid="uid://c1ipb2jk02avn" path="res://Scenes/Game/gingerbread.tscn" id="1_fwpsh"]
-[ext_resource type="PackedScene" uid="uid://vt5ulj20de7m" path="res://Scenes/Game/snowman.tscn" id="2_vli7t"]
+[ext_resource type="PackedScene" uid="uid://c1ipb2jk02avn" path="res://Scenes/Game/gingerbread.tscn" id="1_nhgo5"]
 
 [node name="wave1" type="Node3D"]
 
-[node name="gingerbread" parent="." instance=ExtResource("1_fwpsh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -10)
+[node name="gingerbread" parent="." instance=ExtResource("1_nhgo5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.268, 0, -1.656)
 
-[node name="gingerbread2" parent="." instance=ExtResource("1_fwpsh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -10)
+[node name="gingerbread2" parent="." instance=ExtResource("1_nhgo5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.564, 0, -6.482)
 
-[node name="gingerbread3" parent="." instance=ExtResource("1_fwpsh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, -10)
-
-[node name="gingerbread4" parent="." instance=ExtResource("1_fwpsh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -10)
-
-[node name="gingerbread5" parent="." instance=ExtResource("1_fwpsh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -10)
-
-[node name="gingerbread6" parent="." instance=ExtResource("1_fwpsh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -10)
-
-[node name="snowman" parent="." instance=ExtResource("2_vli7t")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+[node name="gingerbread3" parent="." instance=ExtResource("1_nhgo5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.098, 0, -7.745)
