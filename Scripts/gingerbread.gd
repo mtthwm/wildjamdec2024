@@ -40,4 +40,10 @@ func _take_damage(damage: int) -> void:
 	health = health - damage
 	if health <= 0:
 		queue_free()
+		
+		if boss:
+			get_parent().get_parent().queue_free()
+			process_mode = Node.PROCESS_MODE_DISABLED
+			var win = load("res://Scenes/Homescreen/win.tscn").instantiate()
+			get_tree().root.add_child(win)
 	
