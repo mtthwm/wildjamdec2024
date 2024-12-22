@@ -15,3 +15,4 @@ func _process(delta: float) -> void:
 
 func _wave1() -> void:
 	get_parent().add_child(wave1)
+	

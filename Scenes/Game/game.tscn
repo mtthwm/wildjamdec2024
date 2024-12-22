@@ -1,7 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://bq2yq6o38kab4"]
+[gd_scene load_steps=15 format=3 uid="uid://bq2yq6o38kab4"]
 
+[ext_resource type="Texture2D" uid="uid://bi30akch8fsls" path="res://Scenes/Game/penguin.webp" id="2_esk4n"]
 [ext_resource type="Script" path="res://Scripts/animation_player.gd" id="2_hejmx"]
 [ext_resource type="PackedScene" uid="uid://deavkqm2skg1p" path="res://Scenes/Game/skater.tscn" id="2_pdlqr"]
+[ext_resource type="Script" path="res://Scripts/control.gd" id="3_iky4f"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_uudqv"]
 viewport_path = NodePath("SubViewport")
@@ -13,6 +15,7 @@ size = Vector3(1, 1, 30)
 size = Vector3(1, 1, 20)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wp4u8"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
 border_width_left = 2
 border_width_top = 2
 border_width_right = 2
@@ -22,16 +25,34 @@ border_color = Color(0, 0, 0, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ortam"]
 bg_color = Color(0.821911, 2.62313e-06, 7.70092e-07, 1)
 border_width_left = 3
-border_width_top = 3
+border_width_top = 4
 border_width_right = 3
 border_width_bottom = 3
 border_color = Color(0, 0, 0, 1)
 border_blend = true
 
+[sub_resource type="LabelSettings" id="LabelSettings_bfox4"]
+font_size = 32
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g1fwq"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cmkte"]
+bg_color = Color(1, 0, 0.188235, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+
 [sub_resource type="Animation" id="Animation_sebs7"]
 resource_name = "new_animation"
 length = 5.0
-loop_mode = 2
 tracks/0/type = "method"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -94,14 +115,50 @@ shape = SubResource("BoxShape3D_g2t2m")
 transform = Transform3D(1, 0, 0, 0, 0.34202, 0.939693, 0, -0.939693, 0.34202, 0, 10, 5)
 top_level = true
 
-[node name="ProgressBar" type="ProgressBar" parent="Camera3D2"]
-offset_right = 213.0
-offset_bottom = 27.0
+[node name="HealthBar" type="ProgressBar" parent="Camera3D2"]
+offset_left = 88.0
+offset_top = 47.0
+offset_right = 333.0
+offset_bottom = 78.0
 theme_override_styles/background = SubResource("StyleBoxFlat_wp4u8")
 theme_override_styles/fill = SubResource("StyleBoxFlat_ortam")
-max_value = 3.0
-value = 3.0
+max_value = 5.0
+value = 5.0
 show_percentage = false
+
+[node name="Health" type="Label" parent="Camera3D2"]
+offset_left = 89.0
+offset_right = 192.0
+offset_bottom = 45.0
+text = "Health"
+label_settings = SubResource("LabelSettings_bfox4")
+
+[node name="Penguin" type="Sprite2D" parent="Camera3D2"]
+position = Vector2(40.9845, 39.625)
+scale = Vector2(0.270619, 0.270619)
+texture = ExtResource("2_esk4n")
+
+[node name="Control" type="Control" parent="Camera3D2"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("3_iky4f")
+
+[node name="ProgressBar2" type="ProgressBar" parent="Camera3D2/Control"]
+layout_mode = 0
+offset_left = 1081.0
+offset_top = 22.0
+offset_right = 1117.0
+offset_bottom = 408.0
+theme_override_styles/background = SubResource("StyleBoxFlat_g1fwq")
+theme_override_styles/fill = SubResource("StyleBoxFlat_cmkte")
+value = 100.0
+fill_mode = 3
+show_percentage = false
+
+[node name="Timer" type="Timer" parent="Camera3D2/Control"]
+autostart = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -109,3 +166,6 @@ libraries = {
 }
 autoplay = "new_animation"
 script = ExtResource("2_hejmx")
+
+[connection signal="timeout" from="Camera3D2/Control/Timer" to="Camera3D2/Control" method="_on_timer_timeout"]
+[connection signal="timeout" from="Camera3D2/Control/Timer" to="Camera3D2/Control/ProgressBar2" method="_on_timer_timeout"]

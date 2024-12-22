@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://dt2nmul3jeuoe"]
+
+[ext_resource type="PackedScene" uid="uid://cmntmqtkb863j" path="res://Models/Gift/Gift.glb" id="1_ou7nj"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Gift" parent="." instance=ExtResource("1_ou7nj")]
+transform = Transform3D(1.00692, 0, 0, 0, 1.00692, 0, 0, 0, 1.00692, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.699539, 0.714595, 0, -0.714595, 0.699539, 0, 5.51789, 5.09698)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.166683, 0.986011, 0, -0.986011, 0.166683, 0, 6.67639, 0)
