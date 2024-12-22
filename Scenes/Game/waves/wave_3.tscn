@@ -14,6 +14,22 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.0025, 0, -1.656)
 [node name="gingerbread8" parent="." instance=ExtResource("1_ebi3y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.3896, 0, 11.1768)
 
+[node name="gingerbread13" parent="." instance=ExtResource("1_ebi3y")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -28.597, 0, -26.9311)
+baby = true
+
+[node name="gingerbread14" parent="." instance=ExtResource("1_ebi3y")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -25.424, 0, -35.0928)
+baby = true
+
+[node name="gingerbread15" parent="." instance=ExtResource("1_ebi3y")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -64.6655, 0, 57.8367)
+baby = true
+
+[node name="gingerbread16" parent="." instance=ExtResource("1_ebi3y")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -61.4925, 0, 49.675)
+baby = true
+
 [node name="gingerbread2" parent="." instance=ExtResource("1_ebi3y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.2985, 0, -6.482)
 

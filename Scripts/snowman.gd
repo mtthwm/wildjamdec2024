@@ -3,7 +3,7 @@ extends CharacterBody3D
 
 const SPEED = 0.02
 const ATTACK_DELAY = 1
-var health = 2
+var health = 1
 
 @onready var timer: Timer = $"Timer"
 @onready var shooter: RayCast3D = $"RayCast3D"
