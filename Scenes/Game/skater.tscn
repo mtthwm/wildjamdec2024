@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://deavkqm2skg1p"]
+[gd_scene load_steps=12 format=3 uid="uid://deavkqm2skg1p"]
 
 [ext_resource type="Script" path="res://Scripts/skater.gd" id="1_q1yof"]
 [ext_resource type="Script" path="res://Scripts/cursor.gd" id="2_wuudf"]
 [ext_resource type="PackedScene" uid="uid://cdmro4kl5vcfj" path="res://Models/Penguin/PewPewFInal.glb" id="3_w2h7n"]
 [ext_resource type="PackedScene" uid="uid://c1ugyq5su5qxh" path="res://Models/Penguin/PenguinAnimRigColor.gltf" id="5_0v7t8"]
+[ext_resource type="AudioStream" uid="uid://fsp47rlirhkp" path="res://Models/Audio/Hockey Stop V1.wav" id="5_s8cvi"]
+[ext_resource type="AudioStream" uid="uid://sdkiu3jpkv74" path="res://Models/Audio/Hockey Stop V2.wav" id="6_2cjfe"]
 
 [sub_resource type="PrismMesh" id="PrismMesh_3a48r"]
 size = Vector3(0.8, 0.5, 0.1)
@@ -13,6 +15,39 @@ size = Vector3(0.8, 0.5, 0.1)
 [sub_resource type="ORMMaterial3D" id="ORMMaterial3D_edviy"]
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
+
+[sub_resource type="Animation" id="Animation_7jjj1"]
+resource_name = "Skating"
+length = 1.33
+loop_mode = 1
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("5_s8cvi")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.36,
+"stream": ExtResource("6_2cjfe")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("5_s8cvi")
+}],
+"times": PackedFloat32Array(0, 0.433333, 0.9)
+}
+tracks/0/use_blend = true
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5ir7b"]
+_data = {
+"Skating": SubResource("Animation_7jjj1")
+}
 
 [node name="Skater" type="CharacterBody3D"]
 collision_layer = 11
@@ -57,44 +92,65 @@ transform = Transform3D(-0.00662739, 0, 0.0997801, 0, 0.1, 0, -0.0997801, 0, -0.
 transform = Transform3D(1.7, 0, 0, 0, 1.7, 0, 0, 0, 1.7, 0, 0, 0)
 
 [node name="Skeleton3D" parent="PenguinAnimRigColor/Armature" index="0"]
+bones/1/position = Vector3(0.879298, 0.228671, 1.71279e-07)
 bones/1/rotation = Quaternion(0.505214, 0.494732, -0.494732, 0.505213)
-bones/2/rotation = Quaternion(-5.13356e-08, 8.9205e-09, -0.0104819, 0.999945)
+bones/2/rotation = Quaternion(-0.209601, -0.0928565, -0.000265634, 0.973368)
 bones/2/scale = Vector3(1, 1, 1)
 bones/4/rotation = Quaternion(0.0296612, 3.71529e-08, -0.00207409, 0.999558)
 bones/4/scale = Vector3(1, 1, 1)
-bones/5/rotation = Quaternion(-0.119788, -2.34212e-05, 0.00873233, 0.992761)
+bones/5/rotation = Quaternion(-0.158817, -0.001117, 0.0162414, 0.987174)
 bones/5/scale = Vector3(1, 1, 1)
 bones/6/rotation = Quaternion(0.106464, -7.43424e-05, -0.00666837, 0.994294)
 bones/6/scale = Vector3(1, 1, 1)
 bones/7/rotation = Quaternion(-0.116178, 0.11439, 0.703032, 0.692217)
 bones/7/scale = Vector3(1, 1, 1)
-bones/8/rotation = Quaternion(-0.0593615, -0.151851, 0.359218, 0.918902)
+bones/8/rotation = Quaternion(0.363174, -0.0899592, 0.497404, 0.782689)
 bones/8/scale = Vector3(1, 1, 1)
-bones/9/rotation = Quaternion(1.05615e-07, -4.83058e-08, 0.202349, 0.979313)
+bones/9/rotation = Quaternion(-0.282756, 0.272956, 0.177729, 0.902196)
 bones/10/rotation = Quaternion(-0.116178, -0.11439, -0.703032, 0.692217)
 bones/10/scale = Vector3(1, 1, 1)
-bones/11/rotation = Quaternion(-0.0593615, 0.151851, -0.359218, 0.918902)
+bones/11/rotation = Quaternion(-0.194945, 0.521229, -0.37621, 0.740799)
 bones/11/scale = Vector3(1, 1, 1)
-bones/12/rotation = Quaternion(1.06569e-07, 5.29213e-08, -0.202349, 0.979313)
-bones/14/rotation = Quaternion(-0.00222667, 0.00133712, 0.0951781, 0.995457)
-bones/15/rotation = Quaternion(0.000311084, 0.00518691, -0.582534, 0.81279)
+bones/12/rotation = Quaternion(0.213503, -0.138225, -0.643362, 0.722078)
+bones/13/rotation = Quaternion(0.688756, 0.167718, -0.674033, -0.20776)
+bones/14/rotation = Quaternion(-0.0155637, 0.00100276, 0.665264, 0.746445)
+bones/15/rotation = Quaternion(0.00811325, 0.00576916, -0.869481, 0.493865)
+bones/15/scale = Vector3(1, 1, 1)
 bones/16/rotation = Quaternion(0.00491625, -5.69422e-07, -0.176437, 0.9843)
 bones/16/scale = Vector3(1, 1, 1)
-bones/18/rotation = Quaternion(0.00993334, -0.000279976, -0.0945093, 0.995474)
+bones/17/rotation = Quaternion(0.65525, 0.275921, 0.641122, 0.288924)
+bones/17/scale = Vector3(1, 1, 1.00004)
+bones/18/rotation = Quaternion(0.000218804, -0.000281291, -0.00208289, 0.999998)
 bones/18/scale = Vector3(1, 1, 1)
-bones/19/rotation = Quaternion(0.000312157, -0.00518777, 0.582534, 0.81279)
+bones/19/rotation = Quaternion(0.0872771, 0.398855, 0.769727, 0.490732)
 bones/19/scale = Vector3(1, 1, 1)
 bones/20/rotation = Quaternion(0.00491671, 5.30924e-07, 0.176437, 0.9843)
 bones/20/scale = Vector3(1, 1, 1)
+bones/21/position = Vector3(2.25413, -0.30009, 1.6368)
+bones/21/rotation = Quaternion(0.63053, 0.245266, -0.26696, 0.686301)
 bones/22/scale = Vector3(1, 1, 1)
-bones/23/rotation = Quaternion(-0.00263383, 0.0136764, 0.189089, 0.981861)
-bones/24/rotation = Quaternion(0.58985, -0.38997, 0.38997, 0.58985)
+bones/23/position = Vector3(0.0769525, 0.304663, 0.548384)
+bones/23/rotation = Quaternion(-0.00263384, 0.0136764, 0.189089, 0.981861)
+bones/24/position = Vector3(1.92695, -0.333806, 1.23946)
+bones/24/rotation = Quaternion(0.593764, -0.26171, 0.640041, 0.411459)
 bones/24/scale = Vector3(1, 1, 1)
 bones/26/scale = Vector3(1, 1, 1)
-bones/27/rotation = Quaternion(-0.189089, 0.981861, 0.00263387, 0.0136766)
+bones/27/position = Vector3(0.0769526, -0.635653, -0.548384)
+bones/27/rotation = Quaternion(-0.178251, 0.897721, -0.397688, -0.0645612)
+bones/28/position = Vector3(1.64841, 0.638052, -1.5883)
+bones/28/rotation = Quaternion(0.639825, -0.301038, 0.301038, 0.639825)
 
 [node name="AnimationPlayer" parent="PenguinAnimRigColor" index="1"]
 autoplay = "ArmatureAction_001"
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+volume_db = -9.157
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_5ir7b")
+}
+autoplay = "Skating"
 
 [connection signal="timeout" from="Attack_Timer" to="aim" method="_on_timer_timeout"]
 

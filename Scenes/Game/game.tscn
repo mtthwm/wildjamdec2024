@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bq2yq6o38kab4"]
+[gd_scene load_steps=22 format=3 uid="uid://bq2yq6o38kab4"]
 
 [ext_resource type="Texture2D" uid="uid://bi30akch8fsls" path="res://Scenes/Game/penguin.webp" id="2_esk4n"]
 [ext_resource type="Script" path="res://Scripts/animation_player.gd" id="2_hejmx"]
@@ -8,7 +8,6 @@
 [ext_resource type="AudioStream" uid="uid://byog7pwr16tjj" path="res://Models/Audio/Carol of the Bells Main.wav" id="5_cmeif"]
 [ext_resource type="PackedScene" uid="uid://bik8vpff271ni" path="res://Models/Background/Background.glb" id="5_echvu"]
 [ext_resource type="PackedScene" uid="uid://by6rdmk4mp40b" path="res://Models/Tree/Tree.glb" id="6_3arld"]
-[ext_resource type="AudioStream" uid="uid://brtl5domdp6b" path="res://Models/Audio/Carol of the Bells Call and Response.wav" id="6_cuy64"]
 [ext_resource type="PackedScene" uid="uid://dymwl7ethq0vo" path="res://Models/Cabin/cabin.glb" id="7_j0hnj"]
 [ext_resource type="AudioStream" uid="uid://cdpnvwfdmwu27" path="res://Models/Audio/Carol of the Bells Bridge.wav" id="7_v8rik"]
 [ext_resource type="AudioStream" uid="uid://bmojda4xmb0m6" path="res://Models/Audio/Carol of the Bells Ending.wav" id="8_qvxy3"]
@@ -69,7 +68,7 @@ tracks/0/path = NodePath("AnimationPlayer")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(2.03333, 10.0333, 33.0667, 60),
+"times": PackedFloat32Array(2.03333, 10.0333, 33.0667, 60.0333),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "values": [{
 "args": [],
@@ -94,7 +93,7 @@ tracks/1/loop_wrap = true
 tracks/1/keys = {
 "clips": [{
 "end_offset": 0.0,
-"start_offset": 2.43,
+"start_offset": 2.46,
 "stream": ExtResource("4_shho6")
 }, {
 "end_offset": 0.0,
@@ -103,7 +102,11 @@ tracks/1/keys = {
 }, {
 "end_offset": 0.0,
 "start_offset": 0.0,
-"stream": ExtResource("6_cuy64")
+"stream": ExtResource("5_cmeif")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("5_cmeif")
 }, {
 "end_offset": 0.0,
 "start_offset": 0.0,
@@ -111,9 +114,13 @@ tracks/1/keys = {
 }, {
 "end_offset": 0.0,
 "start_offset": 0.0,
+"stream": ExtResource("5_cmeif")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
 "stream": ExtResource("8_qvxy3")
 }],
-"times": PackedFloat32Array(0, 33.5667, 42.5667, 52.7, 66.2)
+"times": PackedFloat32Array(0.0333333, 33.5667, 42.5667, 51.5667, 60.5667, 74.1, 83.1)
 }
 tracks/1/use_blend = true
 
