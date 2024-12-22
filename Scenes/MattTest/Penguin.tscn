@@ -1,0 +1,39 @@
+[gd_scene load_steps=2 format=3 uid="uid://d4bw2lvfwsybb"]
+
+[ext_resource type="PackedScene" uid="uid://dqkvd4oofp7ya" path="res://Models/Penguin/PenguinAnimRig.gltf" id="1_w6vbw"]
+
+[node name="Penguin" type="Node3D"]
+
+[node name="PenguinAnimRig" parent="." instance=ExtResource("1_w6vbw")]
+
+[node name="Skeleton3D" parent="PenguinAnimRig/Armature" index="0"]
+bones/1/position = Vector3(0.879298, 0.228671, 1.71279e-07)
+bones/2/rotation = Quaternion(-0.209601, -0.0928565, -0.000265636, 0.973368)
+bones/8/rotation = Quaternion(0.363174, -0.0899592, 0.497404, 0.782689)
+bones/9/rotation = Quaternion(-0.282756, 0.272956, 0.177729, 0.902196)
+bones/11/rotation = Quaternion(-0.194945, 0.521229, -0.37621, 0.740799)
+bones/12/rotation = Quaternion(0.213503, -0.138224, -0.643362, 0.722078)
+bones/13/rotation = Quaternion(0.688757, 0.167718, -0.674033, -0.20776)
+bones/14/rotation = Quaternion(-0.0155637, 0.00100276, 0.665264, 0.746445)
+bones/15/rotation = Quaternion(-0.00811325, -0.00576916, 0.869481, -0.493865)
+bones/15/scale = Vector3(1, 1, 1)
+bones/17/rotation = Quaternion(0.65525, 0.275921, 0.641122, 0.288924)
+bones/18/rotation = Quaternion(0.000218804, -0.00028129, -0.00208289, 0.999998)
+bones/19/rotation = Quaternion(0.0872771, 0.398855, 0.769727, 0.490732)
+bones/19/scale = Vector3(1, 0.999991, 1.00001)
+bones/23/position = Vector3(0.0769525, 0.304663, 0.548384)
+bones/23/rotation = Quaternion(-0.00263384, 0.0136764, 0.189089, 0.981861)
+bones/24/position = Vector3(1.92695, -0.333806, 1.23946)
+bones/24/rotation = Quaternion(0.593765, -0.26171, 0.640041, 0.411459)
+bones/27/position = Vector3(0.0769526, -0.635653, -0.548384)
+bones/27/rotation = Quaternion(-0.178251, 0.897721, -0.397688, -0.0645611)
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.80728, 0.590169, 0, -0.590169, 0.80728, 0, 3.61597, 5.45814)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.385922, 0.922531, 0, -0.922531, 0.385922, 0, 3.55238, 0)
+
+[editable path="PenguinAnimRig"]
