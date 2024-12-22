@@ -1,6 +1,6 @@
 [gd_scene load_steps=24 format=3 uid="uid://bq2yq6o38kab4"]
 
-[ext_resource type="Texture2D" uid="uid://bi30akch8fsls" path="res://Scenes/Game/penguin.webp" id="2_esk4n"]
+[ext_resource type="Texture2D" uid="uid://dmi3y6o1n5bv8" path="res://Scenes/Game/Yuh.webp" id="2_edamd"]
 [ext_resource type="Script" path="res://Scripts/animation_player.gd" id="2_hejmx"]
 [ext_resource type="PackedScene" uid="uid://deavkqm2skg1p" path="res://Scenes/Game/skater.tscn" id="2_pdlqr"]
 [ext_resource type="Script" path="res://Scripts/control.gd" id="3_iky4f"]
@@ -185,9 +185,9 @@ text = "Health"
 label_settings = SubResource("LabelSettings_bfox4")
 
 [node name="Penguin" type="Sprite2D" parent="Camera3D2"]
-position = Vector2(40.9845, 39.625)
-scale = Vector2(0.270619, 0.270619)
-texture = ExtResource("2_esk4n")
+position = Vector2(41, 39)
+scale = Vector2(0.0980592, 0.104994)
+texture = ExtResource("2_edamd")
 
 [node name="Control" type="Control" parent="Camera3D2"]
 layout_mode = 3
@@ -230,7 +230,7 @@ transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, -0.5, 0)
 transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, 0, -0.5, 0)
 
 [node name="Background" parent="." instance=ExtResource("5_echvu")]
-transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, -0.5, 0)
+transform = Transform3D(0.41, 0, 0, 0, 0.41, 0, 0, 0, 0.4, 0, -0.5, 0)
 visible = false
 
 [node name="Tree" parent="." instance=ExtResource("6_3arld")]
