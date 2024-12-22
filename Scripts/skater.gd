@@ -5,7 +5,7 @@ const TURN_SPEED = 0.08
 const ATTACK_DELAY = 0.4
 const DAMAGE_DELAY = 0.5
 #const JUMP_VELOCITY = 4.5
-var health = 500
+var health = 10
 
 @onready var attack_timer: Timer = $Attack_Timer
 @onready var damage_timer: Timer = $Damage_Timer

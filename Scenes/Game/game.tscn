@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bq2yq6o38kab4"]
+[gd_scene load_steps=24 format=3 uid="uid://bq2yq6o38kab4"]
 
 [ext_resource type="Texture2D" uid="uid://bi30akch8fsls" path="res://Scenes/Game/penguin.webp" id="2_esk4n"]
 [ext_resource type="Script" path="res://Scripts/animation_player.gd" id="2_hejmx"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://dymwl7ethq0vo" path="res://Models/Cabin/cabin.glb" id="7_j0hnj"]
 [ext_resource type="AudioStream" uid="uid://cdpnvwfdmwu27" path="res://Models/Audio/Carol of the Bells Bridge.wav" id="7_v8rik"]
 [ext_resource type="AudioStream" uid="uid://bmojda4xmb0m6" path="res://Models/Audio/Carol of the Bells Ending.wav" id="8_qvxy3"]
+[ext_resource type="PackedScene" uid="uid://d23iv6gbcm6fm" path="res://Models/Background/BGFinal.glb" id="10_e3n2y"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_uudqv"]
 viewport_path = NodePath("SubViewport")
@@ -60,8 +61,7 @@ border_color = Color(0, 0, 0, 1)
 
 [sub_resource type="Animation" id="Animation_sebs7"]
 resource_name = "new_animation"
-length = 200.0
-loop_mode = 2
+length = 84.2
 tracks/0/type = "method"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -69,7 +69,7 @@ tracks/0/path = NodePath("AnimationPlayer")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(2.03333, 10.0333, 33.0667, 70.1),
+"times": PackedFloat32Array(2.03333, 10.0333, 33.0667, 60),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "values": [{
 "args": [],
@@ -122,7 +122,7 @@ _data = {
 "new_animation": SubResource("Animation_sebs7")
 }
 
-[node name="Game2" type="Node3D"]
+[node name="Game" type="Node3D"]
 
 [node name="Skater" parent="." instance=ExtResource("2_pdlqr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000661075, 0, -0.000576496)
@@ -173,7 +173,7 @@ offset_right = 333.0
 offset_bottom = 78.0
 theme_override_styles/background = SubResource("StyleBoxFlat_wp4u8")
 theme_override_styles/fill = SubResource("StyleBoxFlat_ortam")
-max_value = 5.0
+max_value = 10.0
 value = 5.0
 show_percentage = false
 
@@ -191,9 +191,10 @@ texture = ExtResource("2_esk4n")
 
 [node name="Control" type="Control" parent="Camera3D2"]
 layout_mode = 3
-anchors_preset = 10
+anchors_preset = 1
+anchor_left = 1.0
 anchor_right = 1.0
-grow_horizontal = 2
+grow_horizontal = 0
 size_flags_horizontal = 8
 script = ExtResource("3_iky4f")
 
@@ -221,8 +222,15 @@ libraries = {
 autoplay = "new_animation"
 script = ExtResource("2_hejmx")
 
+[node name="BGFinal" parent="." instance=ExtResource("10_e3n2y")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, -0.5, 0)
+
+[node name="BGFinal2" parent="." instance=ExtResource("10_e3n2y")]
+transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, 0, -0.5, 0)
+
 [node name="Background" parent="." instance=ExtResource("5_echvu")]
 transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, -0.5, 0)
+visible = false
 
 [node name="Tree" parent="." instance=ExtResource("6_3arld")]
 transform = Transform3D(0.016, 0, 0, 0, 0.016, 0, 0, 0, 0.016, -16.5523, -0.920756, 2.49986)
@@ -230,17 +238,15 @@ transform = Transform3D(0.016, 0, 0, 0, 0.016, 0, 0, 0, 0.016, -16.5523, -0.9207
 [node name="Tree4" parent="." instance=ExtResource("6_3arld")]
 transform = Transform3D(0.016, 0, 0, 0, 0.016, 0, 0, 0, 0.016, 13.4034, -0.920756, 10.8518)
 
-[node name="Tree3" parent="." instance=ExtResource("6_3arld")]
-transform = Transform3D(0.016, 0, 0, 0, 0.016, 0, 0, 0, 0.016, 13.6089, -0.920756, -4.72971)
-
 [node name="Tree2" parent="." instance=ExtResource("6_3arld")]
 transform = Transform3D(0.016, 0, 0, 0, 0.016, 0, 0, 0, 0.016, -14.2988, -0.920756, 11.7501)
 
 [node name="Background2" parent="." instance=ExtResource("5_echvu")]
 transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, 0, -0.5, 0)
+visible = false
 
 [node name="cabin" parent="." instance=ExtResource("7_j0hnj")]
-transform = Transform3D(0.0582087, 0, 0.11624, 0, 0.13, 0, -0.11624, 0, 0.0582087, 16.8976, 0, -1.87787)
+transform = Transform3D(0.0582087, 0, 0.11624, 0, 0.13, 0, -0.11624, 0, 0.0582087, 16.898, 0.3, -1.878)
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 
